@@ -11,7 +11,7 @@
   
   <title>
     
-      archive_a: 2021/1 
+      typescript学习笔记 
       
       
       |
@@ -91,41 +91,116 @@
 
 
       <div class="flex-container">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<!-- last: 按年份把文章分组，当前遍历到的年份 -->
-<!-- now: 当前遍历到的文章的发布年份 -->
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
 
-<div class="container archives">
-  <div class="post-list">
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2021</span>
-          </h2>
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">typescript学习笔记</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="Update time"></i>
+          2021-03-03 18:17:12
+        </span>
+        
+      </div>
+      <div class="markdown-body">
+        <h4 id="什么是TypeScript？"><a href="#什么是TypeScript？" class="headerlink" title="什么是TypeScript？"></a>什么是TypeScript？</h4><p>  TypeScript是添加了类型系统的Javascript，适用于任何规模的项目。<br>  Typescript是一门静态类型、弱类型语言<br>  Typescript是完全兼容Javascript的，它不会修改Javascript运行时的特性<br>  Typescript可以编译为Javascript，然后运行在浏览器，Node.js等任何能运行的Javascript环境中。</p>
+<hr>
+<h4 id="Typescript和Javascript的区别："><a href="#Typescript和Javascript的区别：" class="headerlink" title="Typescript和Javascript的区别："></a>Typescript和Javascript的区别：</h4><p>  1.Typescript用于解决大型项目的代码复杂性<br>    可以在编译期间发现并纠正错误<br>    强类型，支持静态和动态类型<br>    支持模板、泛型和接口<br>    需要编译成Javascript代码<br>  2.Javascript是一种脚本语言，用于创建动态网页<br>    作为一种解释型语言，只能在运行时发现错误<br>    弱类型，没有静态类型选项<br>    可以直接在浏览器中使用<br>    不支持模块、泛型和接口</p>
+<hr>
+<h4 id="安装Typescript"><a href="#安装Typescript" class="headerlink" title="安装Typescript"></a>安装Typescript</h4><p><code>npm install -g typescript</code></p>
+<h4 id="编译Typescript"><a href="#编译Typescript" class="headerlink" title="编译Typescript"></a>编译Typescript</h4><p><code>tsc helloworld.ts</code> // 编译后ts转js helloworld.ts =&gt; helloworld.js</p>
+<hr>
+<h4 id="Typescript基础类型"><a href="#Typescript基础类型" class="headerlink" title="Typescript基础类型"></a>Typescript基础类型</h4><blockquote>
+<p>在Typescript中，使用<code>:</code>指定变量的类型。(Typescript在编译时对类型进行静态检查，发现错误，在编译时就会报错,但还是会生成编译结果)</p>
+</blockquote>
+<p><strong>Boolean类型</strong><br><code>let isDone:boolean = false</code><br>使用构造函数Boolean创造的对象不是布尔值</p>
+<p>let createBoolean : boolean = new Boolean(1); //报错(事实上<code>new Boolean()返回的是</code>Boolean<code>对象</code>)</p>
+<p>直接调用<code>Boolean</code>也可以返回一个<code>boolean</code>类型</p>
+<p><code>let createBoolean : boolean = Boolean(1)</code></p>
+<p><strong>Number类型</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let count : number &#x3D; 10;</span><br><span class="line"> let notNumber : number &#x3D; NaN;</span><br><span class="line"> let infinityNum : number &#x3D; Infinity;</span><br></pre></td></tr></table></figure>
+<p><strong>String类型</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let name : string &#x3D; &#39;xiaoming&#39;</span><br><span class="line">let str : string &#x3D; &#96;my name is $&#123;name&#125;&#96;</span><br></pre></td></tr></table></figure>
+<p><strong>Array类型</strong><br><code>let list:number[] = [1,2,3]</code></p>
+<p><strong>空值</strong></p>
+<blockquote>
+<p>javascript没有空值的概念，在Typescript中，可以用<code>void</code>表示没有任何返回值,声明<code>void</code>类型变量只能将它赋值为<code>undefined</code>和<code>null</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function alertName() : void&#123;</span><br><span class="line">  alert(&#39;my name is linda&#39;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>null和undefined</strong></p>
+<blockquote>
+<p>与<code>void</code>的区别是，<code>undefined</code>和<code>null</code>是所有类型的子类型。<code>undefined</code>类型的变量，也可以赋值给<code>number</code>类型的变量</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ley u : undefined &#x3D; undefined;</span><br><span class="line">let n : null &#x3D; null;</span><br><span class="line">let num : number &#x3D; undefined;</span><br></pre></td></tr></table></figure>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/zman-blog.github.io/2021/01/26/css/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
         </div>
       
-      <div class="post-item" title="typescript学习笔记">
-        <div class="time-m-d">03-03</div>
-        <div class="title">
-          <a href="/zman-blog.github.io/2021/03/03/typescript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-            <span>typescript学习笔记</span>
-          </a>
-        </div>
-      </div>
+    </div>
     
-      <div class="post-item" title="css">
-        <div class="time-m-d">01-26</div>
-        <div class="title">
-          <a href="/zman-blog.github.io/2021/01/26/css/">
-            <span>css</span>
-          </a>
-        </div>
+  <div class="post-catalog" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFTypeScript%EF%BC%9F"><span class="toc-text">什么是TypeScript？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Typescript%E5%92%8CJavascript%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A"><span class="toc-text">Typescript和Javascript的区别：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Typescript"><span class="toc-text">安装Typescript</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E8%AF%91Typescript"><span class="toc-text">编译Typescript</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Typescript%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B"><span class="toc-text">Typescript基础类型</span></a></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/zman-blog.github.io/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+
       </div>
     
   </div>
-</div>
+
 
         <div class="footer">
   <div class="social">

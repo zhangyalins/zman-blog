@@ -128,7 +128,32 @@ MathJax = {
         
       </div>
       <div class="markdown-body">
-        
+        <h3 id="Transition"><a href="#Transition" class="headerlink" title="Transition"></a>Transition</h3><p>CSS3过渡是[元素从一种样式逐渐改变为另一种的效果]。要实现这一点，必须规定两个属性值，要添加效果的CSS属性和指定效果的持续时间</p>
+<p><em>语法</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">transition:css属性 花费时间 效果曲线(默认ease) 延迟时间(默认0)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;宽度从原始值到制定的一个过渡，运动曲线 ease 过渡时间0.5秒 触发0.2秒后再执行过渡</span><br><span class="line">transition: width 0.5s ease 2s</span><br><span class="line"></span><br><span class="line">对应的属性名称</span><br><span class="line">transition-property:width; &#x2F;&#x2F;属性</span><br><span class="line">transition-duration:0.5s;  &#x2F;&#x2F;过渡时间</span><br><span class="line">transition-timing-function:ease; &#x2F;&#x2F;过渡曲线</span><br><span class="line">transition-delay:2s; &#x2F;&#x2F;过渡延迟</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Animation"><a href="#Animation" class="headerlink" title="Animation"></a>Animation</h3><p>CSS3动画[实现一个预设动画/页面交互动画效果在页面渲染加载时展示]</p>
+<p><em>语法</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">animation:动画名称 一个周期花费的时间 动画曲线 动画延迟 播放次数 是否返向播放动画 是否暂停动画</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;执行一次logo-line 动画,动画时间为2秒,动画曲线为linear</span><br><span class="line">animation: logo-line 2s linear;</span><br></pre></td></tr></table></figure>
+<h3 id="Transform"><a href="#Transform" class="headerlink" title="Transform"></a>Transform</h3><p><code>transform</code>适用于2D或3D转换元素<br><code>transform-origin</code>转换元素的位置(围绕着那个点进行转换)</p>
+<p><em>语法</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">rotate:旋转</span><br><span class="line">translate:平移</span><br><span class="line">scale:缩放</span><br><span class="line">skew:倾斜</span><br><span class="line"></span><br><span class="line">transform:rotate(30deg); &#x2F;&#x2F;顺时针旋转30度</span><br><span class="line">transform:translate(30px,30px) &#x2F;&#x2F;向右&#x2F;向下平移30像素</span><br><span class="line">transform:scale(.8);&#x2F;&#x2F;缩小至0.8</span><br><span class="line">transform:skew(10deg,10deg)&#x2F;&#x2F;横坐标纵坐标倾斜10度</span><br></pre></td></tr></table></figure>
+<h3 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h3><p><em>语法</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;水平阴影的位置 垂直阴影的位置 模糊距离 阴影大小 阴影颜色 阴影开始的方向(内&#x2F;外)</span><br><span class="line">box-shadow:10px 10px 5px 10px #ccc inset;</span><br></pre></td></tr></table></figure>
+<h3 id="布局技巧"><a href="#布局技巧" class="headerlink" title="布局技巧"></a>布局技巧</h3><p><strong>使用vw定制rem自适应布局</strong></p>
+<p>要点：移动端使用<code>rem布局</code>需要通过JS设置不同的屏幕宽高比的<code>font-size</code>,结合<code>vw</code>单位和<code>calc()</code>可脱离JS控制</p>
+<p>使用场景：rem页面布局(不兼容低版本移动端系统)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* 基于UI width&#x3D;750px DPR&#x3D;2的页面 *&#x2F;</span><br><span class="line">html&#123;</span><br><span class="line">  font-size:calc(100vw &#x2F; 7.5)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用writing-mode排版竖文</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p&#123;</span><br><span class="line">  writing-mode: vertical-rl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>使用tetx-align-last对齐两端文本</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p&#123;</span><br><span class="line">  text-align-last: justify;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="行为技巧"><a href="#行为技巧" class="headerlink" title="行为技巧"></a>行为技巧</h3><p><strong>使用overflow-scrolling支持弹性滚动</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">  -webkit-overflow-scrolling:touch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>使用pointer-events禁用事件触发</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pointer-events:none</span><br></pre></td></tr></table></figure>
       </div>
       
         <div class="prev-or-next">
@@ -137,11 +162,28 @@ MathJax = {
           </div>
           <div class="post-foot-prev">
             
+              <a href="/zman-blog.github.io/2021/03/03/typescript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_self">
+                <span>Next</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
           </div>
         </div>
       
     </div>
     
+  <div class="post-catalog" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Transition"><span class="toc-text">Transition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Animation"><span class="toc-text">Animation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Transform"><span class="toc-text">Transform</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B4%E5%BD%B1"><span class="toc-text">阴影</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%83%E5%B1%80%E6%8A%80%E5%B7%A7"><span class="toc-text">布局技巧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%8C%E4%B8%BA%E6%8A%80%E5%B7%A7"><span class="toc-text">行为技巧</span></a></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/zman-blog.github.io/js/catalog.js"></script>
+
+
+
 
     
       <div class="comments-container">
