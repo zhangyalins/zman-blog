@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="John Doe" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      typescript学习笔记 
+      
+      
+      |
+    
+     Hexo
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="icon" href="/images/favicon.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/zman-blog.github.io/css/base.css">
+<link rel="stylesheet" href="/zman-blog.github.io/iconfont/iconfont.css">
+<link rel="stylesheet" href="/zman-blog.github.io/css/github-markdown.css">
+<link rel="stylesheet" href="/zman-blog.github.io/css/highlight.css">
+
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/zman-blog.github.io/js/fancybox.js"></script>
+
+
+  
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="/images/avatar.png" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">zman</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/zman-blog.github.io/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">typescript学习笔记</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="Update time"></i>
+          2021-03-03 18:17:12
+        </span>
+        
+      </div>
+      <div class="markdown-body">
+        <h3 id="什么是TypeScript？"><a href="#什么是TypeScript？" class="headerlink" title="什么是TypeScript？"></a>什么是TypeScript？</h3><p>  TypeScript是添加了类型系统的Javascript，适用于任何规模的项目。<br>  Typescript是一门静态类型、弱类型语言<br>  Typescript是完全兼容Javascript的，它不会修改Javascript运行时的特性<br>  Typescript可以编译为Javascript，然后运行在浏览器，Node.js等任何能运行的Javascript环境中。</p>
+<hr>
+<h3 id="Typescript和Javascript的区别："><a href="#Typescript和Javascript的区别：" class="headerlink" title="Typescript和Javascript的区别："></a>Typescript和Javascript的区别：</h3><p>  1.Typescript用于解决大型项目的代码复杂性<br>    可以在编译期间发现并纠正错误<br>    强类型，支持静态和动态类型<br>    支持模板、泛型和接口<br>    需要编译成Javascript代码<br>  2.Javascript是一种脚本语言，用于创建动态网页<br>    作为一种解释型语言，只能在运行时发现错误<br>    弱类型，没有静态类型选项<br>    可以直接在浏览器中使用<br>    不支持模块、泛型和接口</p>
+<hr>
+<h3 id="安装Typescript"><a href="#安装Typescript" class="headerlink" title="安装Typescript"></a>安装Typescript</h3><p><code>npm install -g typescript</code></p>
+<h3 id="编译Typescript"><a href="#编译Typescript" class="headerlink" title="编译Typescript"></a>编译Typescript</h3><p><code>tsc helloworld.ts</code> // 编译后ts转js helloworld.ts =&gt; helloworld.js</p>
+<hr>
+<h3 id="Typescript基础类型"><a href="#Typescript基础类型" class="headerlink" title="Typescript基础类型"></a>Typescript基础类型</h3><blockquote>
+<p>在Typescript中，使用<code>:</code>指定变量的类型。(Typescript在编译时对类型进行静态检查，发现错误，在编译时就会报错,但还是会生成编译结果)</p>
+</blockquote>
+<p><strong>Boolean类型</strong><br><code>let isDone:boolean = false</code><br>使用构造函数Boolean创造的对象不是布尔值</p>
+<p>let createBoolean : boolean = new Boolean(1); //报错(事实上<code>new Boolean()返回的是</code>Boolean<code>对象</code>)</p>
+<p>直接调用<code>Boolean</code>也可以返回一个<code>boolean</code>类型</p>
+<p><code>let createBoolean : boolean = Boolean(1)</code></p>
+<p><strong>Number类型</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let count : number &#x3D; 10;</span><br><span class="line"> let notNumber : number &#x3D; NaN;</span><br><span class="line"> let infinityNum : number &#x3D; Infinity;</span><br></pre></td></tr></table></figure>
+<p><strong>String类型</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let name : string &#x3D; &#39;xiaoming&#39;</span><br><span class="line">let str : string &#x3D; &#96;my name is $&#123;name&#125;&#96;</span><br></pre></td></tr></table></figure>
+<p><strong>Array类型</strong><br><code>let list:number[] = [1,2,3]</code></p>
+<p><strong>空值</strong></p>
+<blockquote>
+<p>javascript没有空值的概念，在Typescript中，可以用<code>void</code>表示没有任何返回值,声明<code>void</code>类型变量只能将它赋值为<code>undefined</code>和<code>null</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function alertName() : void&#123;</span><br><span class="line">  alert(&#39;my name is linda&#39;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>null和undefined</strong></p>
+<blockquote>
+<p>与<code>void</code>的区别是，<code>undefined</code>和<code>null</code>是所有类型的子类型。<code>undefined</code>类型的变量，也可以赋值给<code>number</code>类型的变量</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ley u : undefined &#x3D; undefined;</span><br><span class="line">let n : null &#x3D; null;</span><br><span class="line">let num : number &#x3D; undefined;</span><br></pre></td></tr></table></figure>
+<p><strong>任意值类型</strong></p>
+<blockquote>
+<p>任意值用来表示允许赋值为任意类型,当一个变量为任意值时，对它的任何操作返回的内容的类型都是任意值</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let number : any &#x3D; &#39;seven&#39;;</span><br><span class="line">number &#x3D; 7;</span><br><span class="line">&#x2F;&#x2F;访问属性</span><br><span class="line">console.log(number.name)</span><br><span class="line">&#x2F;&#x2F;调用方法</span><br><span class="line">console.log(number.setNumber(5))</span><br></pre></td></tr></table></figure>
+<p><strong>未声明类型的变量</strong></p>
+<blockquote>
+<p>变量在声明时未指定其类型，那么它会被识别为任意值类型</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let something;</span><br><span class="line"></span><br><span class="line">something &#x3D; &#39;seven&#39;</span><br><span class="line">something &#x3D; 7</span><br><span class="line">&#x2F;&#x2F;等价于</span><br><span class="line">let something : any;</span><br><span class="line">something &#x3D; &#39;seven&#39;</span><br><span class="line">something &#x3D; 7;</span><br></pre></td></tr></table></figure>
+
+<h3 id="类型推论"><a href="#类型推论" class="headerlink" title="类型推论"></a>类型推论</h3><blockquote>
+<p>在没有为变量指定类型时，TS会自动推断该变量的类型；如果在定义时没有赋值，则会推断成<code>any</code>类型。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let number &#x3D; &#39;seven&#39;</span><br><span class="line">number &#x3D; 7; &#x2F;&#x2F;报错</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;等价于</span><br><span class="line">let number : string &#x3D; &#39;seven&#39;</span><br><span class="line">number &#x3D; 7;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;推断为any类型</span><br><span class="line">let number;</span><br><span class="line">number &#x3D; &#39;seven&#39;</span><br><span class="line">number &#x3D; 7;</span><br></pre></td></tr></table></figure>
+<h3 id="联合类型"><a href="#联合类型" class="headerlink" title="联合类型"></a>联合类型</h3><blockquote>
+<p>表示取值可以为多种类型中的一种，使用<code>|</code>分割每一个类型</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let number : string | number; &#x2F;&#x2F;number 可以为字符串和数值类型</span><br><span class="line">number &#x3D; &#39;seven&#39;</span><br><span class="line">number &#x3D; 7;</span><br><span class="line">number &#x3D; true; &#x2F;&#x2F;报错</span><br></pre></td></tr></table></figure>
+<p>当Typescript不确定一个联合类型的变量到底是什么类型的时候，只能访问此联合类型的所以类型里的共有属性和方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function getString(something : string | number) : string &#123;</span><br><span class="line">  return something.toString() &#x2F;&#x2F;获取字符串和数值的共有方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>联合类型在变量被赋值时，会根据类型推论规则推断出一个类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let number : string | number;</span><br><span class="line">number &#x3D; &#39;seven&#39;; &#x2F;&#x2F;推断成String</span><br><span class="line">console.log(number.length);&#x2F;&#x2F;5</span><br><span class="line">number &#x3D; 7; &#x2F;&#x2F; 推断成数值</span><br><span class="line">console.log(number.length)&#x2F;&#x2F;报错</span><br></pre></td></tr></table></figure>
+<h3 id="对象类型——接口"><a href="#对象类型——接口" class="headerlink" title="对象类型——接口"></a>对象类型——接口</h3><blockquote>
+<p>在Typescript中，使用接口(interfaces)来定义对象的类型<br>接口是对行为的抽象，而具体行动由类(classes)去实现</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">interface Person&#123;</span><br><span class="line">  name:string;</span><br><span class="line">  age:number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let dog : Person &#x3D; &#123; </span><br><span class="line">  name:&#39;小白&#39;,</span><br><span class="line">  age:2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;定义一个接口&#96;Person&#96;,定义一个变量&#96;dog&#96;,它的类型时&#96;Person&#96;,即约束&#96;dog&#96;形状必须和&#96;Person&#96;定义的一致。</span><br></pre></td></tr></table></figure>
+<p>定义的变量比接口少一些/多一些属性是不允许的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">interface Person&#123;</span><br><span class="line">  name:string;</span><br><span class="line">  age:number;</span><br><span class="line">&#125;</span><br><span class="line">let dog : Person &#x3D; &#123;</span><br><span class="line">  name:&#39;小白&#39;,</span><br><span class="line">  gender:&#39;male&#39;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;报错</span><br></pre></td></tr></table></figure>
+<p><strong>赋值时，变量的属性必须和接口的形状保持一致</strong></p>
+<p><em>可选属性</em></p>
+<blockquote>
+<p>有时不希望完全匹配，可以使用可选属性</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">interface Person&#123;</span><br><span class="line">  name:string;</span><br><span class="line">  age?:number</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let dog : Person &#x3D; &#123;</span><br><span class="line">  name:&#39;小白&#39;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em>任意属性</em></p>
+<blockquote>
+<p>有时一个接口需要允许有任意的属性</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">interface Person &#123;</span><br><span class="line">  name:string;</span><br><span class="line">  age?:number;</span><br><span class="line">  [propName : string] : any; &#x2F;&#x2F;定义任意属性</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let dog &#x3D; &#123;</span><br><span class="line">  name:&#39;小白&#39;,</span><br><span class="line">  gender:&#39;male&#39;,</span><br><span class="line">  status:false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>一旦定义了任意属性，<code>确定属性</code>和<code>可选属性</code>的类型必须是它类型的子集</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">interface Person &#123;</span><br><span class="line">  name:string;</span><br><span class="line">  age?:number;</span><br><span class="line">  [propName : string] : any; &#x2F;&#x2F;定义任意属性</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;报错 (任意属性的值允许是string,但可选属性的值是number，number不是string的子属性，所以报错)</span><br><span class="line">let dog : Person &#x3D; &#123;</span><br><span class="line">  name:&#39;小白&#39;,</span><br><span class="line">  age:25,</span><br><span class="line">  gender:&#39;male&#39;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em>只读属性</em></p>
+<blockquote>
+<p>有时需要对一些字段设置只能在创建的时候赋值，那么可用<code>readonly</code>定义只读属性</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">interface Person &#123;</span><br><span class="line">  readonly id:number;</span><br><span class="line">  name:string;</span><br><span class="line">  age?:number;</span><br><span class="line">  [propName : string] : any; &#x2F;&#x2F;定义任意属性</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let dog : Person &#x3D; &#123;</span><br><span class="line">  id:1,</span><br><span class="line">  name:&#39;小白&#39;,</span><br><span class="line">  gender:&#39;male&#39;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dog.id &#x3D; 2; &#x2F;&#x2F;报错</span><br><span class="line"></span><br><span class="line">只读的约束在于第一次给对象赋值的时候，而不是第一次给只读属性赋值的时候</span><br><span class="line">let dog : Person &#x3D; &#123;</span><br><span class="line">  name:&#39;小白&#39;,</span><br><span class="line">  gender:&#39;male&#39;</span><br><span class="line">&#125;</span><br><span class="line">dog.id &#x3D; 1; &#x2F;&#x2F;报错</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组类型"><a href="#数组类型" class="headerlink" title="数组类型"></a>数组类型</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[类型+方括号]表示法</span><br><span class="line">let arr : number[] &#x3D; [1,2,3,4,5];</span><br><span class="line">数组确定类型后项中不能出现其他的类型</span><br><span class="line">let arr : number[] &#x3D; [1,2,&#39;3&#39;,4] &#x2F;&#x2F;报错</span><br><span class="line">数组的一些方法也会根据数组定义时约定的类型进行限制</span><br><span class="line">arr.push(&#39;8&#39;); &#x2F;&#x2F;报错(只允许传入number参数)</span><br><span class="line"></span><br><span class="line">数组泛型表示法</span><br><span class="line">let arr : Array&lt;number&gt; &#x3D; [1,2,3,4,5];</span><br><span class="line"></span><br><span class="line">接口表示法(较为复杂)</span><br><span class="line">interface NumArr&#123; &#x2F;&#x2F;只要索引的类型时数字时，值类型必须为数字</span><br><span class="line">  [index:number]: number;</span><br><span class="line">&#125;</span><br><span class="line">let arr : NumArr &#x3D; [1,2,3,1,5];</span><br></pre></td></tr></table></figure>
+<p><strong>类数组</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function sum()&#123;</span><br><span class="line">  let args : number[] &#x3D; arguments; &#x2F;&#x2F;报错，不能使用数组的方式定义类数组</span><br><span class="line"></span><br><span class="line">  let args :&#123;</span><br><span class="line">    [index : number] : number;</span><br><span class="line">    length:number;</span><br><span class="line">    callee:Function;</span><br><span class="line">  &#125; &#x3D; arguments;</span><br><span class="line"></span><br><span class="line">  &#x2F;&#x2F;常用的类数组都有自己的接口定义，如&#96;IArguments&#96;,&#96;NodeList&#96;,&#96;HTMLCollection&#96;</span><br><span class="line">  let args : IArguments &#x3D; arguments;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>常见的数组表示法，使用<code>any</code>表示数组中允许出现任意类型</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let list : any[] &#x3D; [&#39;xiaocm&#39;,18,&#123;name:&#39;javascript&#39;,book:18&#125;]</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h3><blockquote>
+<p>在Javascript 中，有两种常见的函数定义方式，函数声明和函数表达式</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;函数声明</span><br><span class="line">&#x2F;&#x2F;js</span><br><span class="line">function sum(x,y)&#123;</span><br><span class="line">  return x + y;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;ts (参数都为number类型，返回值为number类型) 输入多余或少于的参数是不被允许的</span><br><span class="line">function sum(x:number,y:number) : number&#123;</span><br><span class="line">  return x + y;</span><br><span class="line">&#125;</span><br><span class="line">sum(1,2,3); &#x2F;&#x2F;报错</span><br><span class="line">sum(1) &#x2F;&#x2F;报错</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;函数表达式</span><br><span class="line">let sum &#x3D; function(x,y)&#123;</span><br><span class="line">  return x + y;</span><br><span class="line">&#125;</span><br><span class="line">&#x3D;&gt; 表示函数的定义，左边是输入的类型，需要用括号括起来，右边是输出的类型，与ES6中的箭头函数要区分开，两者并没有直接的关系</span><br><span class="line">let sum (x:number,y:number) &#x3D;&gt;number &#x3D; function&#123;</span><br><span class="line">  retuen x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>接口定义函数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">interface fn&#123;</span><br><span class="line">  (source:string,substring:string) : boolean</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let myFn : fn;</span><br><span class="line">myFn &#x3D; function(source:string,substring:string)&#123;</span><br><span class="line">  return source.indexOf(substring) !&#x3D;&#x3D; -1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>可选参数</strong></p>
+<blockquote>
+<p>与接口中的可选属性类型，使用<code>?</code>表示可选(可选参数后面不允许再出现必须参数)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function myFun(firstname:string, lastname? : string)&#123;</span><br><span class="line">  if(lastname)&#123;</span><br><span class="line">    return firstname + &#39;&#39; + lastname</span><br><span class="line">  &#125;else&#123;</span><br><span class="line">    return firstname</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let cat &#x3D; myFun(&#39;lin&#39;,&#39;wang&#39;)</span><br><span class="line">let dog &#x3D; myFun(&#39;lin&#39;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>默认参数</strong></p>
+<blockquote>
+<p>typescript会将添加了默认值的参数识别为可选参数</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function myFun(firstname:string &#x3D; &#39;wy&#39;, lastname? : string)&#123;</span><br><span class="line">  return firstname + &#39;&#39; + lastname</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let dog &#x3D; myFun(&#39;wang&#39;,&#39;lin&#39;)</span><br><span class="line">let cat &#x3D; myFun(undefined,&#39;car&#39;)</span><br></pre></td></tr></table></figure>
+<p><strong>剩余参数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function push(arrat:any[], ...items : any[])&#123;</span><br><span class="line">  items.forEach(function(item)&#123;</span><br><span class="line">    array.push(item)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line">let a &#x3D; [];</span><br><span class="line">push(a,1,2,3,4,5,6)</span><br></pre></td></tr></table></figure>
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/zman-blog.github.io/2021/01/26/css/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div class="post-catalog" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFTypeScript%EF%BC%9F"><span class="toc-text">什么是TypeScript？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Typescript%E5%92%8CJavascript%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A"><span class="toc-text">Typescript和Javascript的区别：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Typescript"><span class="toc-text">安装Typescript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91Typescript"><span class="toc-text">编译Typescript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Typescript%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B"><span class="toc-text">Typescript基础类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E6%8E%A8%E8%AE%BA"><span class="toc-text">类型推论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%94%E5%90%88%E7%B1%BB%E5%9E%8B"><span class="toc-text">联合类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B%E2%80%94%E2%80%94%E6%8E%A5%E5%8F%A3"><span class="toc-text">对象类型——接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%B1%BB%E5%9E%8B"><span class="toc-text">数组类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E"><span class="toc-text">函数声明</span></a></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/zman-blog.github.io/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        <div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/zhangyalins">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © Oranges 2020</a>
+        
+    </div>
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/zman-blog.github.io/js/backtotop.js"></script>
+
+
+
+      
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="Search...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>First search, index file loading, please wait...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>No result<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The search.xml file was not found, please refer to：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The request failed, Try to refresh the page or try again later.<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+    </div>
+  </body>
+</html>
