@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="John Doe" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      css 
+      
+      
+      |
+    
+     Hexo
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="icon" href="/zman-blog.github.io/images/favicon.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/zman-blog.github.io/css/base.css">
+<link rel="stylesheet" href="/zman-blog.github.io/iconfont/iconfont.css">
+<link rel="stylesheet" href="/zman-blog.github.io/css/github-markdown.css">
+<link rel="stylesheet" href="/zman-blog.github.io/css/highlight.css">
+
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/zman-blog.github.io/js/fancybox.js"></script>
+
+
+  
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="/zman-blog.github.io/images/avatar.png" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">zman</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/zman-blog.github.io/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">css</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="Update time"></i>
+          2021-01-26 16:07:52
+        </span>
+        
+      </div>
+      <div class="markdown-body">
+        <h3 id="Transition"><a href="#Transition" class="headerlink" title="Transition"></a>Transition</h3><p>CSS3 过渡是[元素从一种样式逐渐改变为另一种的效果]。要实现这一点，必须规定两个属性值，要添加效果的 CSS 属性和指定效果的持续时间</p>
+<p><em>语法</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">transition:css属性 花费时间 效果曲线(默认ease) 延迟时间(默认0)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;宽度从原始值到制定的一个过渡，运动曲线 ease 过渡时间0.5秒 触发0.2秒后再执行过渡</span><br><span class="line">transition: width 0.5s ease 2s</span><br><span class="line"></span><br><span class="line">对应的属性名称</span><br><span class="line">transition-property:width; &#x2F;&#x2F;属性</span><br><span class="line">transition-duration:0.5s;  &#x2F;&#x2F;过渡时间</span><br><span class="line">transition-timing-function:ease; &#x2F;&#x2F;过渡曲线</span><br><span class="line">transition-delay:2s; &#x2F;&#x2F;过渡延迟</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="Animation"><a href="#Animation" class="headerlink" title="Animation"></a>Animation</h3><p>CSS3 动画[实现一个预设动画/页面交互动画效果在页面渲染加载时展示]</p>
+<p><em>语法</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">animation:动画名称 一个周期花费的时间 动画曲线 动画延迟 播放次数 是否返向播放动画 是否暂停动画</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;执行一次logo-line 动画,动画时间为2秒,动画曲线为linear</span><br><span class="line">animation: logo-line 2s linear;</span><br></pre></td></tr></table></figure>
+<h3 id="Transform"><a href="#Transform" class="headerlink" title="Transform"></a>Transform</h3><p><code>transform</code>适用于 2D 或 3D 转换元素<br><code>transform-origin</code>转换元素的位置(围绕着那个点进行转换)</p>
+<p><em>语法</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">rotate:旋转</span><br><span class="line">translate:平移</span><br><span class="line">scale:缩放</span><br><span class="line">skew:倾斜</span><br><span class="line"></span><br><span class="line">transform:rotate(30deg); &#x2F;&#x2F;顺时针旋转30度</span><br><span class="line">transform:translate(30px,30px) &#x2F;&#x2F;向右&#x2F;向下平移30像素</span><br><span class="line">transform:scale(.8);&#x2F;&#x2F;缩小至0.8</span><br><span class="line">transform:skew(10deg,10deg)&#x2F;&#x2F;横坐标纵坐标倾斜10度</span><br></pre></td></tr></table></figure>
+<h3 id="阴影"><a href="#阴影" class="headerlink" title="阴影"></a>阴影</h3><p><em>语法</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;水平阴影的位置 垂直阴影的位置 模糊距离 阴影大小 阴影颜色 阴影开始的方向(内&#x2F;外)</span><br><span class="line">box-shadow:10px 10px 5px 10px #ccc inset;</span><br></pre></td></tr></table></figure>
+<h3 id="布局技巧"><a href="#布局技巧" class="headerlink" title="布局技巧"></a>布局技巧</h3><p><strong>使用 vw 定制 rem 自适应布局</strong></p>
+<p>要点：移动端使用<code>rem布局</code>需要通过 JS 设置不同的屏幕宽高比的<code>font-size</code>,结合<code>vw</code>单位和<code>calc()</code>可脱离 JS 控制</p>
+<p>使用场景：rem 页面布局(不兼容低版本移动端系统)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* 基于UI width&#x3D;750px DPR&#x3D;2的页面 *&#x2F;</span><br><span class="line">html&#123;</span><br><span class="line">  font-size:calc(100vw &#x2F; 7.5)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>使用 writing-mode 排版竖文</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p&#123;</span><br><span class="line">  writing-mode: vertical-rl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>使用 tetx-align-last 对齐两端文本</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p&#123;</span><br><span class="line">  text-align-last: justify;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="行为技巧"><a href="#行为技巧" class="headerlink" title="行为技巧"></a>行为技巧</h3><p><strong>使用 overflow-scrolling 支持弹性滚动</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">  -webkit-overflow-scrolling:touch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>使用 pointer-events 禁用事件触发</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pointer-events:none</span><br></pre></td></tr></table></figure>
+
+<p><strong>基于图像大小的响应文本</strong></p>
+<blockquote>
+<p>经常会碰到这样的需求在图像下面的标题，以不超过图像的宽度，在大多数情况下，都需要他们具有相同的宽度</p>
+</blockquote>
+<p>常见的解决方案有：<br>1.使标题和图像的宽度相同，这个方法必须手动调整宽度，如果图像大小不一样，需要每次调整不同的图像<br>2.使用绝对定位使标题宽度基于父元素100%,这会导致文本脱离文档流<br>3.手动插入换行符，不建议使用</p>
+<p>还有一种简单的解决方案</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;html </span><br><span class="line">&lt;div class&#x3D;&quot;box&quot;&gt;</span><br><span class="line">   &lt;img&gt;</span><br><span class="line">   &lt;h1&gt;Lorem ipsum dolor ..&lt;&#x2F;h1&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;style</span><br><span class="line">.box &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line">h1 &#123;</span><br><span class="line">  width: 0;</span><br><span class="line">  min-width: 100%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="before-和-after-的用途"><a href="#before-和-after-的用途" class="headerlink" title="before 和 after 的用途"></a>before 和 after 的用途</h3><blockquote>
+<p>伪元素以双冒号<code>::</code>开头，而伪类以单冒号<code>:</code>开头语</p>
+</blockquote>
+<p><strong>在内容前后追加文本</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;HTML</span><br><span class="line">&lt;h1&gt;X7 Pro&lt;&#x2F;h1&gt;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;css</span><br><span class="line"> &lt;style&gt;</span><br><span class="line">    h1&#123;</span><br><span class="line">      color: #d6000f;</span><br><span class="line">    &#125;</span><br><span class="line">    h1::before&#123;</span><br><span class="line">      content: &quot;Turboant&quot;;</span><br><span class="line">      font-size: 18px;</span><br><span class="line">      color: aquamarine;</span><br><span class="line">    &#125;</span><br><span class="line">    h1::after&#123;</span><br><span class="line">      content: &quot;Electric Scooter&quot;;</span><br><span class="line">      font-size: 18px;</span><br><span class="line">      color: cornflowerblue;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/zman-blog.github.io/images/css_pic1.png"></p>
+<p><strong>装饰线标题</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;html</span><br><span class="line">&lt;h2&gt;X-SENSE Sale&lt;&#x2F;h2&gt;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;style</span><br><span class="line"> h2&#123;</span><br><span class="line">      color: #d6000f;</span><br><span class="line">    &#125;</span><br><span class="line">    h2::before,h2::after&#123;</span><br><span class="line">      content: &quot;&quot;;</span><br><span class="line">      display: inline-block;</span><br><span class="line">      margin: 0 16px;</span><br><span class="line">      width: 100px;</span><br><span class="line">      vertical-align: middle;</span><br><span class="line">      border-top: 6px double #d6000f;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/zman-blog.github.io/images/css_pic2.png"></p>
+<p><strong>使用特定引号</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;html</span><br><span class="line">&lt;div class&#x3D;&quot;wrapper&quot;&gt;</span><br><span class="line">    &lt;blockquote lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">      Hello! I am a block quote in English. Check out how the quotation marks are automatically added around me!</span><br><span class="line">    &lt;&#x2F;blockquote&gt;</span><br><span class="line"></span><br><span class="line">    &lt;blockquote lang&#x3D;&quot;fr&quot;&gt;</span><br><span class="line">      Salut ! Je suis une citation en français. Je ne connais pas le français, alors j’ai demandé à quelqu’un sur Twitter de le traduire !</span><br><span class="line">    &lt;&#x2F;blockquote&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;css</span><br><span class="line"> blockquote::before &#123;</span><br><span class="line">  content: open-quote;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">blockquote::after &#123;</span><br><span class="line">  content: close-quote;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">blockquote::before, blockquote::after &#123;</span><br><span class="line">  opacity: 0.25;</span><br><span class="line">  padding: 0 10px;</span><br><span class="line">  font-size: 3em;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">blockquote &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  justify-content: space-between;</span><br><span class="line">  align-items: center;</span><br><span class="line">  margin: 20px;</span><br><span class="line">  padding: 20px 10px;</span><br><span class="line">  border-radius: 10px;</span><br><span class="line">  background-color: #e5ddcb;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;* everything below is for demo appearances and not important to the concept *&#x2F;</span><br><span class="line"></span><br><span class="line">body &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  place-items: center;</span><br><span class="line">  min-height: 100vh;</span><br><span class="line">  margin: 0;</span><br><span class="line">  color: #ab526b;</span><br><span class="line">  background-color: #827085;</span><br><span class="line">  font: 900 1.375rem&#x2F;1.5 &#39;Merriweather&#39;, serif;</span><br><span class="line">  font-style: italic;</span><br><span class="line">  text-align: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.wrapper &#123;</span><br><span class="line">  max-width: 660px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@media (max-width: 450px) &#123;</span><br><span class="line">  body &#123; font-size: 1rem; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/zman-blog.github.io/images/css_pic3.png"></p>
+<p><strong>显示元素的属性</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;html</span><br><span class="line">&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;www.x-sense.com&#x2F;&quot;&gt;X-SENSE&lt;&#x2F;a&gt;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;css</span><br><span class="line">a::after&#123;</span><br><span class="line">  content: &quot;链接：&quot;attr(href);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/zman-blog.github.io/images/css_pic4.png"></p>
+<p><strong>用于计数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;html</span><br><span class="line">&lt;div class&#x3D;&quot;wrapper&quot;&gt;</span><br><span class="line">    &lt;input id&#x3D;&quot;c1&quot; type&#x3D;&quot;checkbox&quot;&gt;&lt;label for&#x3D;&quot;c1&quot;&gt;&lt;&#x2F;label&gt;</span><br><span class="line">    &lt;input id&#x3D;&quot;c2&quot; type&#x3D;&quot;checkbox&quot;&gt;&lt;label for&#x3D;&quot;c2&quot;&gt;&lt;&#x2F;label&gt;</span><br><span class="line">    &lt;input id&#x3D;&quot;c3&quot; type&#x3D;&quot;checkbox&quot;&gt;&lt;label for&#x3D;&quot;c3&quot;&gt;&lt;&#x2F;label&gt;</span><br><span class="line">    &lt;input id&#x3D;&quot;c4&quot; type&#x3D;&quot;checkbox&quot;&gt;&lt;label for&#x3D;&quot;c4&quot;&gt;&lt;&#x2F;label&gt;</span><br><span class="line">    &lt;input id&#x3D;&quot;c5&quot; type&#x3D;&quot;checkbox&quot;&gt;&lt;label for&#x3D;&quot;c5&quot;&gt;&lt;&#x2F;label&gt;</span><br><span class="line">    &lt;span&gt; &#x3D; &lt;&#x2F;span&gt;</span><br><span class="line">    &lt;output&gt;&lt;&#x2F;output&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&#x2F;&#x2F;css</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    input:checked&#123;</span><br><span class="line">      counter-increment:total;</span><br><span class="line">    &#125;</span><br><span class="line">    output::before&#123;</span><br><span class="line">      content: counter(total);</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/zman-blog.github.io/images/css_pic5.png"></p>
+<p><strong>动画效果</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;html</span><br><span class="line">&lt;div&gt;&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;css</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    div::before&#123;</span><br><span class="line">      content: &quot;&quot;;</span><br><span class="line">      animation: flip 6s linear;</span><br><span class="line">      color: mediumvioletred;</span><br><span class="line">      font-weight: bold;</span><br><span class="line">      font-size: 30px;</span><br><span class="line">    &#125;</span><br><span class="line">    @keyframes flip &#123;</span><br><span class="line">      from&#123; content: &quot;Hello!&quot;;&#125;</span><br><span class="line">      to&#123;content: &quot;GoodBye!&quot;;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/zman-blog.github.io/2021/03/03/typescript/" target="_self">
+                <span>Next</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div class="post-catalog" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Transition"><span class="toc-text">Transition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Animation"><span class="toc-text">Animation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Transform"><span class="toc-text">Transform</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B4%E5%BD%B1"><span class="toc-text">阴影</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%83%E5%B1%80%E6%8A%80%E5%B7%A7"><span class="toc-text">布局技巧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%8C%E4%B8%BA%E6%8A%80%E5%B7%A7"><span class="toc-text">行为技巧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#before-%E5%92%8C-after-%E7%9A%84%E7%94%A8%E9%80%94"><span class="toc-text">before 和 after 的用途</span></a></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/zman-blog.github.io/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        <div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/zhangyalins">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © Oranges 2020</a>
+        
+    </div>
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/zman-blog.github.io/js/backtotop.js"></script>
+
+
+
+      
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="Search...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>First search, index file loading, please wait...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>No result<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The search.xml file was not found, please refer to：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The request failed, Try to refresh the page or try again later.<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+    </div>
+  </body>
+</html>
