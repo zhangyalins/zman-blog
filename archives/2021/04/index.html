@@ -11,7 +11,7 @@
   
   <title>
     
-      一些片段 
+      archive_a: 2021/4 
       
       
       |
@@ -91,108 +91,95 @@
 
 
       <div class="flex-container">
-        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
-<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
 
-<!-- LaTex Display -->
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-</script>
-<script>
-MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']]
-  }
-};
-</script>
+<!-- last: 按年份把文章分组，当前遍历到的年份 -->
+<!-- now: 当前遍历到的文章的发布年份 -->
 
-
-
-  
-
-  
-
-  
-
-  
-  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
-  <div class="container post-details" id="post-details">
-    <div class="post-content">
-      <div class="post-title">一些片段</div>
-      <div class="post-attach">
-        <span class="post-pubtime">
-          <i class="iconfont icon-updatetime" title="Update time"></i>
-          2021-03-11 16:17:09
-        </span>
-        
-      </div>
-      <div class="markdown-body">
-        <h3 id="自定义字体"><a href="#自定义字体" class="headerlink" title="自定义字体"></a>自定义字体</h3><blockquote>
-<p>在某些情况下，需要用到自定义字体，我们可以使用@font-face来声明字体和 font-display配合使用</p>
-</blockquote>
-<p><strong>font-face 声明自定义字体需要定义4个属性</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@font-face&#123;</span><br><span class="line">  font-family:textFont &#x2F;&#x2F;字体名称</span><br><span class="line">  src:url()&#x2F;&#x2F;需要加载的字体路径</span><br><span class="line">  font-weight:bold &#x2F;&#x2F;字体粗细(非必填项，默认400)</span><br><span class="line">  font-style:inherit &#x2F;&#x2F;字体样式(非必填项)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;使用自定义字体</span><br><span class="line"></span><br><span class="line">html&#123;</span><br><span class="line">  font-family:textFont</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>font-display 决定@font-face字体下载时采用何种方式显示文字</strong><br>font-display有四个属性值：</p>
-<ul>
-<li><code>auto</code>：默认值</li>
-<li><code>swap</code>:后备文字立即显示直到自定义字体加载完成后再使用自定义字体渲染文本</li>
-<li><code>fallback</code>:在较短时间内文字不可见，如果自定义字体未加载完成，则先展示无样式文本。</li>
-<li><code>optional</code>: 与<code>fallback</code>方法类似，但浏览器可以自由决定是否使用自定义字体，如果自定义字体加载速度很慢，那自定义字体可能不会被使用</li>
-</ul>
-<h3 id="前端职责"><a href="#前端职责" class="headerlink" title="前端职责"></a>前端职责</h3><blockquote>
-<p>前端开发人员是专门编写HTMl、CSS和Jvascript代码的Web开发人员</p>
-</blockquote>
-<p>1.<strong>精心制作语义HTML标签</strong>：重点关注可访问性，以便友好的用户体验。<br>2.<strong>创建CSS代码</strong>：控制Web体验的风格和外观，处理样式、版式、响应式布局、动画及UI的任何其他视觉方面，前端人员以模块化，灵活性，兼容性和可扩展性为重点，设计具有弹性的CSS代码<br>3.<strong>编写操作DOM对象的Javscript</strong>：例如手风琴<br>4.<strong>在浏览器和设备上进行测试</strong>：确保UI在PC/WAP上的功能和美观<br>5.<strong>优化前端代码的性能</strong>：以创建轻量级、快速加载、无BUG的体验<br>6.<strong>与设计师合作</strong>：确保品牌、设计意愿和用户体验都最佳实践转换到浏览器中<br>7.<strong>与后端合作</strong>：确保前端代码和后端代码、服务、api和其他技术架构兼容</p>
-
-      </div>
-      
-        <div class="prev-or-next">
-          <div class="post-foot-next">
-            
-              <a href="/zman-blog.github.io/2021/03/03/typescript/" target="_self">
-                <i class="iconfont icon-chevronleft"></i>
-                <span>Prev</span>
-              </a>
-            
-          </div>
-          <div class="post-foot-prev">
-            
-              <a href="/zman-blog.github.io/2021/03/15/javascriptFn/" target="_self">
-                <span>Next</span>
-                <i class="iconfont icon-chevronright"></i>
-              </a>
-            
-          </div>
+<div class="container archives">
+  <div class="post-list">
+    
+        <!-- 后续文章的发布年份呈现 -->
+        <div class="content-title">
+          <h2>
+            <span>2021</span>
+          </h2>
         </div>
       
-    </div>
+      <div class="post-item" title="issue">
+        <div class="time-m-d">05-12</div>
+        <div class="title">
+          <a href="/zman-blog.github.io/2021/05/12/issue/">
+            <span>issue</span>
+          </a>
+        </div>
+      </div>
     
-  <div class="post-catalog" id="catalog">
-    <div class="title">Contents</div>
-    <div class="catalog-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93"><span class="toc-text">自定义字体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E8%81%8C%E8%B4%A3"><span class="toc-text">前端职责</span></a></li></ol>
-    </div>
-  </div>
-
-  
-<script src="/zman-blog.github.io/js/catalog.js"></script>
-
-
-
-
+      <div class="post-item" title="">
+        <div class="time-m-d">04-15</div>
+        <div class="title">
+          <a href="/zman-blog.github.io/2021/04/15/javascript/">
+            <span></span>
+          </a>
+        </div>
+      </div>
     
-      <div class="comments-container">
-        
-
-
-
-
-
+      <div class="post-item" title="vue3">
+        <div class="time-m-d">03-22</div>
+        <div class="title">
+          <a href="/zman-blog.github.io/2021/03/22/vue3/">
+            <span>vue3</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="well">
+        <div class="time-m-d">03-18</div>
+        <div class="title">
+          <a href="/zman-blog.github.io/2021/03/18/well/">
+            <span>well</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="javascript">
+        <div class="time-m-d">03-15</div>
+        <div class="title">
+          <a href="/zman-blog.github.io/2021/03/15/javascriptFn/">
+            <span>javascript</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="一些片段">
+        <div class="time-m-d">03-11</div>
+        <div class="title">
+          <a href="/zman-blog.github.io/2021/03/11/snippet/">
+            <span>一些片段</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="typescript学习笔记">
+        <div class="time-m-d">03-03</div>
+        <div class="title">
+          <a href="/zman-blog.github.io/2021/03/03/typescript/">
+            <span>typescript学习笔记</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="css">
+        <div class="time-m-d">01-26</div>
+        <div class="title">
+          <a href="/zman-blog.github.io/2021/01/26/cssstudy/">
+            <span>css</span>
+          </a>
+        </div>
       </div>
     
   </div>
-
+</div>
 
         <div class="footer">
   <div class="social">

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="John Doe" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+     Hexo
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="icon" href="/zman-blog.github.io/images/favicon.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/zman-blog.github.io/css/base.css">
+<link rel="stylesheet" href="/zman-blog.github.io/iconfont/iconfont.css">
+<link rel="stylesheet" href="/zman-blog.github.io/css/github-markdown.css">
+<link rel="stylesheet" href="/zman-blog.github.io/css/highlight.css">
+
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/zman-blog.github.io/js/fancybox.js"></script>
+
+
+  
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="/zman-blog.github.io/images/avatar.png" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">zman</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/zman-blog.github.io/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title"></div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="Update time"></i>
+          2021-04-15 11:51:03
+        </span>
+        
+      </div>
+      <div class="markdown-body">
+        <h3 id="变量对象"><a href="#变量对象" class="headerlink" title="变量对象"></a>变量对象</h3><blockquote>
+<p>变量对象，准确说法应该是<strong>环境记录对象</strong>,环境记录对象有区分<code>此法环境对象</code>和<code>变量环境对象</code></p>
+</blockquote>
+<p>1.词法环境对象：用于解析当前上下文中，由<code>const</code>声明的标识符引用</p>
+<p>2.变量环境对象：用于解析由<code>var</code>声明的标识符引用。</p>
+<h3 id="执行上下文生命周期"><a href="#执行上下文生命周期" class="headerlink" title="执行上下文生命周期"></a>执行上下文生命周期</h3><ul>
+<li><p>创建阶段：在这个阶段，执行上下文会分别创建变量对象，确定this指向，以及其他需要的状态。</p>
+</li>
+<li><p>代码执行阶段：创建完成之后，会开始执行代码，完成变量赋值，以及执行其他代码</p>
+</li>
+<li><p>销毁阶段： 可执行代码执行完毕之后，执行上下文出栈，对应的内存空间失去引用，等待被回收</p>
+</li>
+</ul>
+<h3 id="变量对象-1"><a href="#变量对象-1" class="headerlink" title="变量对象"></a>变量对象</h3><p>1.建立arguments对象：检查当前上下文中的参数，建立该对象下的属性与属性值</p>
+<p>2.检查当前上下文的执行函数声明，也就是使用function关键字声明的函数。在变量对象中以函数名建立一个属性，属性值为指向该函数所在的内存地址的引用</p>
+<p>3.检查当前上下文中的变量声明，每找到一个变量声明，就在变量对象中以变量名建立一个属性，属性值为undefined,const/let声明的变量没有赋值，不能提前使用</p>
+<p><em>如果var变量与函数同名，则在这个阶段，以函数为准，下一个阶段，函数值会被变量覆盖</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">console.log(foo) &#x2F;&#x2F; function foo</span><br><span class="line">function foo()&#123;console.log(function foo)&#125;</span><br><span class="line">var foo &#x3D; 20;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">上例执行顺序：</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;首先将所有函数声明放入变量对象中</span><br><span class="line">function foo()&#123;console.log(function foo)&#125;</span><br><span class="line">&#x2F;&#x2F;其次将所有变量声明放入变量对象中，但因为foo已经存在同名函数，此时以函数为准，不会被undefined覆盖</span><br><span class="line">var foo &#x3D; 20;</span><br><span class="line">&#x2F;&#x2F;然后开始执行阶段代码的执行</span><br><span class="line">console.log(foo)</span><br><span class="line"></span><br><span class="line">foo &#x3D; 20;</span><br></pre></td></tr></table></figure>
+<p>总结：<br>变量对象创建过程：<br>1.创建arguments对象</p>
+<p>2.检查function函数声明创建属性</p>
+<p>3.检查var变量声明的创建属性</p>
+<p>案例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">function test()&#123;</span><br><span class="line">  console.log(a);</span><br><span class="line">  console.log(foo());</span><br><span class="line">  var a &#x3D; 1;</span><br><span class="line">  function foo()&#123;</span><br><span class="line">    return 2;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;创建过程</span><br><span class="line">testEC &#x3D; &#123;</span><br><span class="line">  &#x2F;&#x2F;变量对象</span><br><span class="line">  VO:&#123;&#125;,</span><br><span class="line">  scopeChain:&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;抽出变量对象讲解</span><br><span class="line"></span><br><span class="line">VO &#x3D; &#123;</span><br><span class="line">  arguments:&#123;...&#125;,</span><br><span class="line">  foo:&lt;foo reference&gt;, &#x2F;&#x2F;表示foo的地址引用</span><br><span class="line">  a:undefined</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em>未进入执行阶段之前，变量对象中的属性都不能访问。但是进入执行阶段之后，变量对象转变为了活动对象，里面的属性都能被访问了，然后进行执行阶段操作</em></p>
+<p><strong>变量对象和活动对象的区别</strong></p>
+<blockquote>
+<p>他们其实是同一个对象，只是处于执行上下文的不同声明周期，不过处于函数调用栈栈顶的执行上下文中的变量对象才会变成活动对象</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;执行阶段</span><br><span class="line">VO-&gt;AO</span><br><span class="line"></span><br><span class="line">AO &#x3D; &#123;</span><br><span class="line">  arguments:&#123;...&#125;,</span><br><span class="line">  foo:&lt;foo reference&gt;</span><br><span class="line">  a:1,</span><br><span class="line">  this:window</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;上面的例子，执行顺序为如下</span><br><span class="line"></span><br><span class="line">function test()&#123;</span><br><span class="line">  function foo()&#123;</span><br><span class="line">    return 2;</span><br><span class="line">  &#125;</span><br><span class="line">  var a;</span><br><span class="line">  console.log(a);</span><br><span class="line">  console.log(foo());</span><br><span class="line">  a &#x3D; 1;</span><br><span class="line">&#125;</span><br><span class="line">test();</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;全局上下文</span><br><span class="line">windowEC &#x3D; &#123;</span><br><span class="line">  VO:Window,</span><br><span class="line">  scopeChain:&#123;&#125;,</span><br><span class="line">  this:Window</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>let/const</strong><br>let/const声明的变量，仍然会提前被收集到变量对象中，但var不同的是，let/const定义的变量，不会再这个时候给他赋值undefined</p>
+<p>因为完全没有赋值，即使变量提升了，也不能在赋值前调用他，这就是<strong>暂时性四区</strong></p>
+<h3 id="作用域与作用域链"><a href="#作用域与作用域链" class="headerlink" title="作用域与作用域链"></a>作用域与作用域链</h3><blockquote>
+<p>词法环境：是一种规范类型，用于根据ECMAScript代码的词法嵌套结构来定义标识符和特定变量与函数的关联。词法环境在我们写代码的时候就已经确定</p>
+</blockquote>
+<p><strong>词法环境其实就是作用域</strong></p>
+<p>1.在JS中可以将作用域定义为一套规则，用来管理JS引擎如何在当前作用域以及嵌套的子作用域中根据标识符名称进行变量查找(标识符指的是变量名或函数名)</p>
+<p>2.JS中有全局作用域与函数作用域</p>
+<p><strong>作用域链</strong></p>
+<blockquote>
+<p>作用域和作用域链是不同的，作用域是一套规则，而作用域链是作用域的具体实现</p>
+</blockquote>
+<p><em>作用域链是当前环境与上层环境的一系列变量对象组成，它保证了当前执行环境对符合访问权限的变量和函数的有序访问</em><br>//示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; 2;</span><br><span class="line">function test()&#123;</span><br><span class="line">  var b &#x3D; a + 10;</span><br><span class="line">  function innerTest()&#123;</span><br><span class="line">    var c &#x3D; 10;</span><br><span class="line">    return b + c;</span><br><span class="line">  &#125;</span><br><span class="line">  return innerTest()</span><br><span class="line">&#125;</span><br><span class="line">test();</span><br></pre></td></tr></table></figure>
+<p>在上面的例子中，全局、函数test、函数innerTest的执行上下文先后创建。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">innerTestEC &#x3D; &#123;</span><br><span class="line">  VO:&#123;&#125;, &#x2F;&#x2F;变量对象</span><br><span class="line">  scopeChain:[VO(innerTest),Vo(test),Vo(global)] &#x2F;&#x2F;作用域链</span><br><span class="line">&#125;</span><br><span class="line">数组的第一项scopChain[0]为作用域的最顶端，而数组的最后一项，为作用域链的最末端，所有的最末端都为全局变量对象</span><br></pre></td></tr></table></figure>
+<p>作用域链是由一系列变量对象组成，可以在这个单向通道中，查询变量对象中的标识符，这样就能访问到上一层作用域中的变量</p>
+<h3 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h3><ul>
+<li><p>1.全局对象中的this,指向它本身</p>
+</li>
+<li><p>2.函数中的this，由调用者提供，由调用函数的方式来决定。如果调用者函数，被某一个对象所拥有，那么该函数在调用时，内部的this指向该对象，如果函数独立调用，那么该函数内部的this，则指向全局对象(window)，在严格模式下，this指向undefined</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;闭包中的this指向window</span><br><span class="line">var a &#x3D; 20;</span><br><span class="line">function fn()&#123;</span><br><span class="line">    function foo()&#123;</span><br><span class="line">        console.log(this.a)</span><br><span class="line">    &#125;</span><br><span class="line">   foo();</span><br><span class="line">&#125;</span><br><span class="line">fn();</span><br></pre></td></tr></table></figure>
+<p><em>严格模式</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function fn2()&#123;</span><br><span class="line">    &#39;use strict&#39;</span><br><span class="line">    console.log(this)</span><br><span class="line">&#125;</span><br><span class="line">fn2() &#x2F;&#x2F;输出undefined (fn是被独立调用)</span><br><span class="line"></span><br><span class="line">window.fn() &#x2F;&#x2F;fn是调用者，被window所拥有</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; 20;</span><br><span class="line">var foo &#x3D; &#123;</span><br><span class="line">    a:10,</span><br><span class="line">    getA:function()&#123;</span><br><span class="line">        return this.a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(foo.getA());</span><br><span class="line">var test &#x3D; foo.getA;</span><br><span class="line">test();</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;foo.getA中，getA是调用者，被对象foo所拥有，因此this指向了foo</span><br><span class="line">&#x2F;&#x2F;test()作为调用者，尽管它与foo.getA的引用相同，但是它是独立调用者，因此this指向window(严格模式下指向undefined)</span><br></pre></td></tr></table></figure>
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/zman-blog.github.io/2021/03/22/vue3/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/zman-blog.github.io/2021/05/12/issue/" target="_self">
+                <span>Next</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div class="post-catalog" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1"><span class="toc-text">变量对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">执行上下文生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1-1"><span class="toc-text">变量对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE"><span class="toc-text">作用域与作用域链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this%E6%8C%87%E5%90%91"><span class="toc-text">this指向</span></a></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/zman-blog.github.io/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        <div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/zhangyalins">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © Oranges 2020</a>
+        
+    </div>
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/zman-blog.github.io/js/backtotop.js"></script>
+
+
+
+      
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="Search...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>First search, index file loading, please wait...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>No result<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The search.xml file was not found, please refer to：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The request failed, Try to refresh the page or try again later.<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+    </div>
+  </body>
+</html>

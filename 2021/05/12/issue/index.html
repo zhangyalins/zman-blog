@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="John Doe" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      issue 
+      
+      
+      |
+    
+     Hexo
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="icon" href="/zman-blog.github.io/images/favicon.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/zman-blog.github.io/css/base.css">
+<link rel="stylesheet" href="/zman-blog.github.io/iconfont/iconfont.css">
+<link rel="stylesheet" href="/zman-blog.github.io/css/github-markdown.css">
+<link rel="stylesheet" href="/zman-blog.github.io/css/highlight.css">
+
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/zman-blog.github.io/js/fancybox.js"></script>
+
+
+  
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <div class="avatar">
+    <a href="/">
+      <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="/zman-blog.github.io/images/avatar.png" alt="">
+      
+    </a>
+    <div class="nickname"><a href="/">zman</a></div>
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">Home</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">Archives</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">Tags</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">About</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<script src="/zman-blog.github.io/js/activeNav.js"></script>
+
+
+
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">issue</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="Update time"></i>
+          2021-05-12 09:13:02
+        </span>
+        
+      </div>
+      <div class="markdown-body">
+        <h3 id="1Rem单位出现小数如何处理"><a href="#1Rem单位出现小数如何处理" class="headerlink" title="1Rem单位出现小数如何处理"></a>1Rem单位出现小数如何处理</h3><h3 id="javascript精度问题"><a href="#javascript精度问题" class="headerlink" title="javascript精度问题"></a>javascript精度问题</h3><h3 id="axios用途"><a href="#axios用途" class="headerlink" title="axios用途"></a>axios用途</h3><h3 id="性能优化的点"><a href="#性能优化的点" class="headerlink" title="性能优化的点"></a>性能优化的点</h3><p>  <strong>webpack分包</strong><br>  <strong>首页资源大小</strong><br>  <strong>请求优化</strong></p>
+<h3 id="ssr"><a href="#ssr" class="headerlink" title="ssr"></a>ssr</h3><h3 id="http2多路复用"><a href="#http2多路复用" class="headerlink" title="http2多路复用"></a>http2多路复用</h3><h3 id="触发BFC的方式"><a href="#触发BFC的方式" class="headerlink" title="触发BFC的方式"></a>触发BFC的方式</h3><h3 id="rem和vw使用场景"><a href="#rem和vw使用场景" class="headerlink" title="rem和vw使用场景"></a>rem和vw使用场景</h3><h3 id="输入url到页面返回的结果"><a href="#输入url到页面返回的结果" class="headerlink" title="输入url到页面返回的结果"></a>输入url到页面返回的结果</h3><h3 id="缓存的实现方式"><a href="#缓存的实现方式" class="headerlink" title="缓存的实现方式"></a>缓存的实现方式</h3><p>当浏览器要请求资源时</p>
+<p>调用 Service Worker 的 fetch 事件响应<br>查看 memory cache<br>查看 disk cache。这里又细分：<br>如果有强制缓存且未失效，则使用强制缓存，不请求服务器。这时的状态码全部是 200<br>如果有强制缓存但已失效，使用对比缓存，比较后确定 304 还是 200</p>
+<p>发送网络请求，等待网络响应<br>把响应内容存入 disk cache (如果 HTTP 头信息配置可以存的话)<br>把响应内容 的引用 存入 memory cache (无视 HTTP 头信息的配置)<br>把响应内容存入 Service Worker 的 Cache Storage (如果 Service Worker 的脚本调用了 cache.put())<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/44789005">https://zhuanlan.zhihu.com/p/44789005</a></p>
+<h3 id="nextTick实现原理"><a href="#nextTick实现原理" class="headerlink" title="$nextTick实现原理"></a>$nextTick实现原理</h3><blockquote>
+<p>nextTick是一个异步方法，nextTick主要是使用了宏任务和微任务(事件循环机制),定义了一个异步方法，多次调用nextTick会将方法存入队列中，通过这个异步方法清空当前队列，所以nextTick是个异步方法</p>
+</blockquote>
+<p>nextTick是将回调函数延迟在下一次dom更新数据后调用。<br>当数据更新了，在dom中渲染后，自动指向该函数。</p>
+<p>当调用nextTick方法时会传入两个参数，回调函数和执行回调函数的上下文环境，如果没有提供回调函数，那么将返回promise对象。首先将拿到的回调函数存放到数组中，判断是否正在执行回调函数，如果当前没有在pending的时候，就会执行timeFunc，多次执行nextTick只会执行一次timerFunc，timeFunc其实就是执行异步的方法，在timeFunc方法中选择一个异步方法（首先判断是否支持promise，如果支持就将flushCallbacks放在promise中异步执行，并且标记使用微任务。如果不支持promise就看是否支持MutationObserver方法，如果支持就new了一个MutationObserver类，创建一个文本节点进行监听，当数据发生变化了就会异步执行flushCallbacks方法。如果以上两个都不支持就看是否支持setImmediate方法，如果支持setImmediate 就去异步执行flushCallbacks方法。如果以上三种方法都不支持，就使用setTimeout），然后异步去执行flushCallbacks方法，flushCallbacks中就是将传递的函数依次执行。</p>
+<p>nextTick多次调用会维持一个数组，之后会异步的把数组中的方法以此执行，这样的话用户就会在视图更新之后再获取到真实的dom元素。<br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/mCcW4OYj3p3471ghMBylBw">https://mp.weixin.qq.com/s/mCcW4OYj3p3471ghMBylBw</a></p>
+<h3 id="不同域名如何共享cookie"><a href="#不同域名如何共享cookie" class="headerlink" title="不同域名如何共享cookie"></a>不同域名如何共享cookie</h3><blockquote>
+<p>不同域名是无法共享浏览器端本地信息，包括cookies，这即是跨域问题。<br>可以通过SSO单点登录的技术实现机制：<br>1、需要一个统一处理用户登录的单点系统UserCenter。该系统集中处理用户信息，包括用户信息加密存储，用户注册，用户登录验证，SSO接入等；<br>2、需要接入SSO单点登录的系统(例如业务系统A)不处理任何用户登录信息，服务器端在用户第一次提交请求时，跳转到SSO系统验证是否登陆，如未登录，则一般重定向SSO系统的登录页面，用户登录成功以后，再回跳到业务系统A原来的页面，业务系统A与此同时写入由SSO带回来的用户信息到session中，后续的交互过程中，业务系统A就一直保持有用户的登录信息了。<br>3、假如用户由上述登录过的业务系统A跳转访问到同样接入到SSO单点登录系统UserCenter的业务系统B，此时业务系统B没有用户登录信息，同样会跳转SSO单点登录系统验证是否登录，SSO检测到用户之前已登录，又重定向到业务系统B，此时系统B从SSO带回登录信息并写入到session，这样用户就做到了，一处登录多处保持登录信息，即完成了SSO单点登录。<br>需要特别说明的是：在这个SSO单点登录过程中，上述SSO系统UserCenter、业务系统A和业务系统B都会在客户端写入标志登录状态的cookies，其中有且仅有SSO系统保存有用户密码等私密信息，业务系统A和B仅只可访问到用户标识信息，这样也很好地保证了用户信息的安全性。</p>
+</blockquote>
+<h2 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h2><h3 id="MVC和MVVM的区别"><a href="#MVC和MVVM的区别" class="headerlink" title="MVC和MVVM的区别"></a>MVC和MVVM的区别</h3><h3 id="v-if-与-v-for-为什么不建议一起使用"><a href="#v-if-与-v-for-为什么不建议一起使用" class="headerlink" title="v-if 与 v-for 为什么不建议一起使用"></a>v-if 与 v-for 为什么不建议一起使用</h3><h3 id="computed-和-watch-的区别和运用的场景"><a href="#computed-和-watch-的区别和运用的场景" class="headerlink" title="computed 和 watch 的区别和运用的场景"></a>computed 和 watch 的区别和运用的场景</h3><h3 id="怎样理解-Vue-的单向数据流"><a href="#怎样理解-Vue-的单向数据流" class="headerlink" title="怎样理解 Vue 的单向数据流"></a>怎样理解 Vue 的单向数据流</h3><h3 id="Vue2-0-响应式数据的原理"><a href="#Vue2-0-响应式数据的原理" class="headerlink" title="Vue2.0 响应式数据的原理"></a>Vue2.0 响应式数据的原理</h3><h3 id="Vue-如何检测数组变化"><a href="#Vue-如何检测数组变化" class="headerlink" title="Vue 如何检测数组变化"></a>Vue 如何检测数组变化</h3><h3 id="Vue3-0-和-2-0-的响应式原理区别"><a href="#Vue3-0-和-2-0-的响应式原理区别" class="headerlink" title="Vue3.0 和 2.0 的响应式原理区别"></a>Vue3.0 和 2.0 的响应式原理区别</h3><h3 id="v-model-原理"><a href="#v-model-原理" class="headerlink" title="v-model 原理"></a>v-model 原理</h3><h3 id="v-for-为什么要加-key"><a href="#v-for-为什么要加-key" class="headerlink" title="v-for 为什么要加 key"></a>v-for 为什么要加 key</h3><h3 id="Vue-事件绑定原理"><a href="#Vue-事件绑定原理" class="headerlink" title="Vue 事件绑定原理"></a>Vue 事件绑定原理</h3><h3 id="Vuex页面刷新数据丢失问题如何解决"><a href="#Vuex页面刷新数据丢失问题如何解决" class="headerlink" title="Vuex页面刷新数据丢失问题如何解决"></a>Vuex页面刷新数据丢失问题如何解决</h3><h3 id="虚拟DOM"><a href="#虚拟DOM" class="headerlink" title="虚拟DOM"></a>虚拟DOM</h3><h3 id="vue-router-路由钩子函数执行顺序"><a href="#vue-router-路由钩子函数执行顺序" class="headerlink" title="vue-router 路由钩子函数执行顺序"></a>vue-router 路由钩子函数执行顺序</h3><h3 id="Vuex的理解"><a href="#Vuex的理解" class="headerlink" title="Vuex的理解"></a>Vuex的理解</h3><h3 id="Vue中使用的设计模式"><a href="#Vue中使用的设计模式" class="headerlink" title="Vue中使用的设计模式"></a>Vue中使用的设计模式</h3><h3 id="Vue的性能优化"><a href="#Vue的性能优化" class="headerlink" title="Vue的性能优化"></a>Vue的性能优化</h3><h3 id="Vue-mixin-使用场景和原理"><a href="#Vue-mixin-使用场景和原理" class="headerlink" title="Vue.mixin 使用场景和原理"></a>Vue.mixin 使用场景和原理</h3><h3 id="keep-alive-使用场景和原理"><a href="#keep-alive-使用场景和原理" class="headerlink" title="keep-alive 使用场景和原理"></a>keep-alive 使用场景和原理</h3><h3 id="Vue-set-方法原理"><a href="#Vue-set-方法原理" class="headerlink" title="Vue.set()方法原理"></a>Vue.set()方法原理</h3><h3 id="Vue-extend作用和原理"><a href="#Vue-extend作用和原理" class="headerlink" title="Vue.extend作用和原理"></a>Vue.extend作用和原理</h3><h3 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h3><h3 id="Vue修饰符"><a href="#Vue修饰符" class="headerlink" title="Vue修饰符"></a>Vue修饰符</h3><h3 id="Vue-模板编译原理"><a href="#Vue-模板编译原理" class="headerlink" title="Vue 模板编译原理"></a>Vue 模板编译原理</h3><h3 id="生命周期钩子函数如何实现"><a href="#生命周期钩子函数如何实现" class="headerlink" title="生命周期钩子函数如何实现"></a>生命周期钩子函数如何实现</h3><h3 id="函数式组件使用场景和原理"><a href="#函数式组件使用场景和原理" class="headerlink" title="函数式组件使用场景和原理"></a>函数式组件使用场景和原理</h3><h3 id="diff算法"><a href="#diff算法" class="headerlink" title="diff算法"></a>diff算法</h3><!-- issue 链接 -->
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6961222829979697165?utm_source=gold_browser_extension#heading-21">https://juejin.cn/post/6961222829979697165?utm_source=gold_browser_extension#heading-21</a></p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/zman-blog.github.io/2021/04/15/javascript/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div class="post-catalog" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1Rem%E5%8D%95%E4%BD%8D%E5%87%BA%E7%8E%B0%E5%B0%8F%E6%95%B0%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86"><span class="toc-text">1Rem单位出现小数如何处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#javascript%E7%B2%BE%E5%BA%A6%E9%97%AE%E9%A2%98"><span class="toc-text">javascript精度问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#axios%E7%94%A8%E9%80%94"><span class="toc-text">axios用途</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%9A%84%E7%82%B9"><span class="toc-text">性能优化的点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ssr"><span class="toc-text">ssr</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http2%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8"><span class="toc-text">http2多路复用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91BFC%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-text">触发BFC的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rem%E5%92%8Cvw%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">rem和vw使用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5url%E5%88%B0%E9%A1%B5%E9%9D%A2%E8%BF%94%E5%9B%9E%E7%9A%84%E7%BB%93%E6%9E%9C"><span class="toc-text">输入url到页面返回的结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%93%E5%AD%98%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="toc-text">缓存的实现方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nextTick%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="toc-text">$nextTick实现原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E5%9F%9F%E5%90%8D%E5%A6%82%E4%BD%95%E5%85%B1%E4%BA%ABcookie"><span class="toc-text">不同域名如何共享cookie</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue"><span class="toc-text">vue</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC%E5%92%8CMVVM%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">MVC和MVVM的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-if-%E4%B8%8E-v-for-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%BB%BA%E8%AE%AE%E4%B8%80%E8%B5%B7%E4%BD%BF%E7%94%A8"><span class="toc-text">v-if 与 v-for 为什么不建议一起使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#computed-%E5%92%8C-watch-%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E8%BF%90%E7%94%A8%E7%9A%84%E5%9C%BA%E6%99%AF"><span class="toc-text">computed 和 watch 的区别和运用的场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%8E%E6%A0%B7%E7%90%86%E8%A7%A3-Vue-%E7%9A%84%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81"><span class="toc-text">怎样理解 Vue 的单向数据流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue2-0-%E5%93%8D%E5%BA%94%E5%BC%8F%E6%95%B0%E6%8D%AE%E7%9A%84%E5%8E%9F%E7%90%86"><span class="toc-text">Vue2.0 响应式数据的原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-%E5%A6%82%E4%BD%95%E6%A3%80%E6%B5%8B%E6%95%B0%E7%BB%84%E5%8F%98%E5%8C%96"><span class="toc-text">Vue 如何检测数组变化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue3-0-%E5%92%8C-2-0-%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86%E5%8C%BA%E5%88%AB"><span class="toc-text">Vue3.0 和 2.0 的响应式原理区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-model-%E5%8E%9F%E7%90%86"><span class="toc-text">v-model 原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-for-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%8A%A0-key"><span class="toc-text">v-for 为什么要加 key</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A%E5%8E%9F%E7%90%86"><span class="toc-text">Vue 事件绑定原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vuex%E9%A1%B5%E9%9D%A2%E5%88%B7%E6%96%B0%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3"><span class="toc-text">Vuex页面刷新数据丢失问题如何解决</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9FDOM"><span class="toc-text">虚拟DOM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vue-router-%E8%B7%AF%E7%94%B1%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F"><span class="toc-text">vue-router 路由钩子函数执行顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vuex%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-text">Vuex的理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-text">Vue中使用的设计模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-text">Vue的性能优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-mixin-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%E5%92%8C%E5%8E%9F%E7%90%86"><span class="toc-text">Vue.mixin 使用场景和原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#keep-alive-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%E5%92%8C%E5%8E%9F%E7%90%86"><span class="toc-text">keep-alive 使用场景和原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-set-%E6%96%B9%E6%B3%95%E5%8E%9F%E7%90%86"><span class="toc-text">Vue.set()方法原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-extend%E4%BD%9C%E7%94%A8%E5%92%8C%E5%8E%9F%E7%90%86"><span class="toc-text">Vue.extend作用和原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4"><span class="toc-text">自定义指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-text">Vue修饰符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-%E6%A8%A1%E6%9D%BF%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86"><span class="toc-text">Vue 模板编译原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0"><span class="toc-text">生命周期钩子函数如何实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BB%84%E4%BB%B6%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%E5%92%8C%E5%8E%9F%E7%90%86"><span class="toc-text">函数式组件使用场景和原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#diff%E7%AE%97%E6%B3%95"><span class="toc-text">diff算法</span></a></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/zman-blog.github.io/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+
+      </div>
+    
+  </div>
+
+
+        <div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/zhangyalins">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © Oranges 2020</a>
+        
+    </div>
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Theme by Oranges | Powered by Hexo</a>
+        
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/zman-blog.github.io/js/backtotop.js"></script>
+
+
+
+      
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        
+          <input type="text" class="search-input" id="search-input" placeholder="Search...">
+        
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    inputArea.onclick = function() {
+      getSearchFile()
+      this.onclick = null
+    }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        // inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'>First search, index file loading, please wait...<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='" + data_url + "' class='search-result-title'>" + orig_data_title + "</a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<p class=\"search-result-abstract\">" + match_content + "...</p>"
+                }
+                str += "</li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>No result<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The search.xml file was not found, please refer to：<a href='https://github.com/zchengsite/hexo-theme-oranges#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>The request failed, Try to refresh the page or try again later.<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+    </div>
+  </body>
+</html>
